@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Genesys and Google - Agent Assist and DialogFlow CX Workshop on Documentation for Hugo Learn Theme</title>
-    <link>/</link>
-    <description>Recent content in Genesys and Google - Agent Assist and DialogFlow CX Workshop on Documentation for Hugo Learn Theme</description>
+    <title>Agent Assist on Documentation for Hugo Learn Theme</title>
+    <link>/030-agentassist.html</link>
+    <description>Recent content in Agent Assist on Documentation for Hugo Learn Theme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Intro to Google CCAI</title>
-      <link>/010-genesysandgooglepartnership/10_first.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/010-genesysandgooglepartnership/10_first.html</guid>
-      <description>Configure Workshop   Step one
-  Step two
-  Step three
-  </description>
-    </item>
-    
+    <language>en-us</language><atom:link href="/030-agentassist/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why Use Agent Assist</title>
       <link>/030-agentassist/10_first.html</link>
@@ -25,30 +13,6 @@
       
       <guid>/030-agentassist/10_first.html</guid>
       <description>Configure Workshop   Step one
-  Step two
-  Step three
-  </description>
-    </item>
-    
-    <item>
-      <title>Why Use DialogFlow CX</title>
-      <link>/020-dialogflowcx/10_first.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/020-dialogflowcx/10_first.html</guid>
-      <description>Configure Workshop   Step one
-  Step two
-  Step three
-  </description>
-    </item>
-    
-    <item>
-      <title>Integration Setup</title>
-      <link>/020-dialogflowcx/20_second.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/020-dialogflowcx/20_second.html</guid>
-      <description>Advanced Lesson   Step one
   Step two
   Step three
   </description>
@@ -79,35 +43,11 @@
     </item>
     
     <item>
-      <title>Building a DialogFlow CX Agent</title>
-      <link>/020-dialogflowcx/30_third.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/020-dialogflowcx/30_third.html</guid>
-      <description>Advanced Lesson   Step one
-  Step two
-  Step three
-  </description>
-    </item>
-    
-    <item>
       <title>Creating a Knowledge Base</title>
       <link>/030-agentassist/40_fourth.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/030-agentassist/40_fourth.html</guid>
-      <description>Advanced Lesson   Step one
-  Step two
-  Step three
-  </description>
-    </item>
-    
-    <item>
-      <title>Invoking the DialogFlow CX Agent in an Architect Flow</title>
-      <link>/020-dialogflowcx/40_fourth.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/020-dialogflowcx/40_fourth.html</guid>
       <description>Advanced Lesson   Step one
   Step two
   Step three

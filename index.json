@@ -1,35 +1,105 @@
 [
 {
 	"uri": "/",
-	"title": "Genesys Workshop",
+	"title": "Genesys and Google - Agent Assist and DialogFlow CX Workshop",
 	"tags": [],
 	"description": "",
-	"content": "Genesys Workshop Welcome In this workshop you will learn to apply your foundational knowledge of Genesys and master example use cases that demonstrate Experience as a Service.\nLearning Objectives  Setup and configure your environment. Creating users and groups. Configure security.  "
+	"content": "Genesys and Google - Agent Assist and DialogFlow CX Workshop Welcome In this workshop, you will learn all about the Genesys and Google partnership. Specifically, we will focus on how Genesys Cloud CX and Google CCAI can become a dynamic duo! By the end of this workshop, you\u0026rsquo;ll have a DialogFlow CX bot and an Agent Assist Conversation profile integrated in Genesys Cloud CX.\nLearning Objectives  Set up DialogFlow CX integration Build DialogFlow CX bot and use in Architect flows Set up Agent Assist integration with Google CCAI Configure Agent Assist Conversation profile in Google Cloud Platform  Prerequisites  Genesys Cloud org \u0026amp; user with master admin privileges Google Cloud Platform account Installed the Agent Assist integration from AppFoundry Installed the DialogFlow CX integration from AppFoundry  "
 },
 {
-	"uri": "/020-getting-started/10_first.html",
-	"title": "First Lesson",
+	"uri": "/010-genesysandgooglepartnership/10_first.html",
+	"title": "Intro to Google CCAI",
 	"tags": [],
 	"description": "",
 	"content": "Configure Workshop   Step one\n  Step two\n  Step three\n  "
 },
 {
-	"uri": "/010-introduction.html",
-	"title": "Introduction",
+	"uri": "/010-genesysandgooglepartnership.html",
+	"title": "The Genesys and Google Partnership",
 	"tags": [],
 	"description": "",
 	"content": "Genesys Workshop Series Introduction Welcome In this workshop, you will learn\u0026hellip;\n This workshop is focused on things one, two and three.\n Learning Objectives  Master this Configure that Integrate this  "
 },
 {
-	"uri": "/020-getting-started.html",
-	"title": "Getting Started",
+	"uri": "/030-agentassist/10_first.html",
+	"title": "Why Use Agent Assist",
 	"tags": [],
 	"description": "",
-	"content": "Getting Started  First Lesson   Second Lesson   "
+	"content": "Configure Workshop   Step one\n  Step two\n  Step three\n  "
 },
 {
-	"uri": "/020-getting-started/20_second.html",
-	"title": "Second Lesson",
+	"uri": "/020-dialogflowcx/10_first.html",
+	"title": "Why Use DialogFlow CX",
+	"tags": [],
+	"description": "",
+	"content": "Configure Workshop   Step one\n  Step two\n  Step three\n  "
+},
+{
+	"uri": "/020-dialogflowcx.html",
+	"title": "DialogFlow CX",
+	"tags": [],
+	"description": "",
+	"content": "Getting Started  Why Use DialogFlow CX   Integration Setup   Building a DialogFlow CX Agent   Invoking the DialogFlow CX Agent in an Architect Flow   "
+},
+{
+	"uri": "/020-dialogflowcx/20_second.html",
+	"title": "Integration Setup",
+	"tags": [],
+	"description": "",
+	"content": "Advanced Lesson   Step one\n  Step two\n  Step three\n  "
+},
+{
+	"uri": "/030-agentassist/20_second.html",
+	"title": "Integration Setup",
+	"tags": [],
+	"description": "",
+	"content": "Advanced Lesson   Step one\n  Step two\n  Step three\n  "
+},
+{
+	"uri": "/030-agentassist/30_third.html",
+	"title": "Adding Your Knowledge Articles to Google Cloud Storage",
+	"tags": [],
+	"description": "",
+	"content": "Advanced Lesson   Step one\n  Step two\n  Step three\n  "
+},
+{
+	"uri": "/030-agentassist.html",
+	"title": "Agent Assist",
+	"tags": [],
+	"description": "",
+	"content": "Getting Started  Why Use Agent Assist   Integration Setup   Adding Your Knowledge Articles to Google Cloud Storage   Creating a Knowledge Base   Creating the Conversation Profile   Create the Assistant for Your Queue   "
+},
+{
+	"uri": "/020-dialogflowcx/30_third.html",
+	"title": "Building a DialogFlow CX Agent",
+	"tags": [],
+	"description": "",
+	"content": "Advanced Lesson   Step one\n  Step two\n  Step three\n  "
+},
+{
+	"uri": "/030-agentassist/40_fourth.html",
+	"title": "Creating a Knowledge Base",
+	"tags": [],
+	"description": "",
+	"content": "Advanced Lesson   Step one\n  Step two\n  Step three\n  "
+},
+{
+	"uri": "/020-dialogflowcx/40_fourth.html",
+	"title": "Invoking the DialogFlow CX Agent in an Architect Flow",
+	"tags": [],
+	"description": "",
+	"content": "Advanced Lesson   Step one\n  Step two\n  Step three\n  "
+},
+{
+	"uri": "/030-agentassist/50_fifth.html",
+	"title": "Creating the Conversation Profile",
+	"tags": [],
+	"description": "",
+	"content": "Advanced Lesson   Step one\n  Step two\n  Step three\n  "
+},
+{
+	"uri": "/030-agentassist/60_sixth.html",
+	"title": "Create the Assistant for Your Queue",
 	"tags": [],
 	"description": "",
 	"content": "Advanced Lesson   Step one\n  Step two\n  Step three\n  "
