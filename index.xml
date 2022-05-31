@@ -16,30 +16,6 @@
     </item>
     
     <item>
-      <title>Why Use Agent Assist</title>
-      <link>/030-agentassist/10_first.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/030-agentassist/10_first.html</guid>
-      <description>Configure Workshop   Step one
-  Step two
-  Step three
-  </description>
-    </item>
-    
-    <item>
-      <title>Why Use DialogFlow CX</title>
-      <link>/020-dialogflowcx/10_first.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/020-dialogflowcx/10_first.html</guid>
-      <description>Configure Workshop   Step one
-  Step two
-  Step three
-  </description>
-    </item>
-    
-    <item>
       <title>Integration Setup</title>
       <link>/020-dialogflowcx/20_second.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
