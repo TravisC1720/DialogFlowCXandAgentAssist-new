@@ -11,22 +11,22 @@
     <title>Building a DialogFlow CX Agent :: Documentation for Hugo Learn Theme</title>
 
     
-    <link href="../css/nucleus.css?1654027203" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1654027203" rel="stylesheet">
-    <link href="../css/hybrid.css?1654027203" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1654027203" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1654027203" rel="stylesheet">
-    <link href="../css/auto-complete.css?1654027203" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1654027203" rel="stylesheet">
-    <link href="../css/theme.css?1654027203" rel="stylesheet">
-    <link href="../css/tabs.css?1654027203" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1654027203" rel="stylesheet">
+    <link href="../css/nucleus.css?1654282606" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1654282606" rel="stylesheet">
+    <link href="../css/hybrid.css?1654282606" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1654282606" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1654282606" rel="stylesheet">
+    <link href="../css/auto-complete.css?1654282606" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1654282606" rel="stylesheet">
+    <link href="../css/theme.css?1654282606" rel="stylesheet">
+    <link href="../css/tabs.css?1654282606" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1654282606" rel="stylesheet">
     
-    <link href="../css/theme-mine.css?1654027203" rel="stylesheet">
+    <link href="../css/theme-mine.css?1654282606" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1654027203"></script>
+    <script src="../js/jquery-3.3.1.min.js?1654282606"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1654027203"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1654027203"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1654282606"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1654282606"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1654027203"></script>
+<script type="text/javascript" src="../js/search.js?1654282606"></script>
 
     
   </div>
@@ -525,7 +525,8 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#advanced-lesson">Advanced Lesson</a></li>
+    <li><a href="#terminology">Terminology</a></li>
+    <li><a href="#building-a-dialogflow-cx-agent">Building a DialogFlow CX Agent</a></li>
   </ul>
 </nav>
     </div>
@@ -550,18 +551,37 @@
         
 
 
-<h2 id="advanced-lesson">Advanced Lesson</h2>
-<ol>
-<li>
-<p>Step one</p>
+<h2 id="terminology">Terminology</h2>
+<ul>
+<li>Agents - Agent is DialogFlow&rsquo;s term for bot. An agent is a natural language understanding module that understands the nuances of human language. You design and build a Dialogflow agent to handle the types of conversations required for your system.</li>
+<li>Flows - Used to define topics and the associated conversational paths. Here&rsquo;s an example of different flows that might be built for a pizza delivery agent.
+<img src="../images/PizzaDeliveryFlows.jpg" alt="Pizza Delivery Flows"></li>
+<li>Pages - Pages are configured to collect information from the end user that is relevant for the conversational state represented by the page. See the below example of different pages in blue that might be used for a Food Order flow.
+<img src="../images/foodOrderPages.jpg" alt="Food Order Pages"></li>
+<li>Entity Types and Parameters - If you are familiar with other bot engines, you might know the term slots and slot types. Entity types and parameters are essentially the same. Entity types control how data from end users can be inputted. With entity types, many come predefined such as Number Sequence. Entity types that come predefined are called system entities and entity types that you create are called custom entities. For example, you might create a custom entity type for pizza toppings that only accepts a predefined list of topppings. Parameters capture and reference values that have been supplied by the end user. Each parameter is assigned an entity type. For example, the parameter account number might have an entity type of number sequence.</li>
+<li>Forms - A form is built for each page and it is a list of parameters that should be collected from the end user for the page.</li>
+<li>Intents - An intent categorizes a users intention based on data called training phrases. Training phrases are example phrases of what end users might type or say that would match up to the intent.</li>
+<li>Fulfillment - Fulfillment enables the virtual agent to respond to the end users question, query for information, or terminate a session. It is possible to call mutiple fulfillments during one turn.</li>
+<li>State Handlers - Used to control the conversation by creating responses for end users and/or by transitioning the current page.</li>
+</ul>
+<p>Reference page - <a href="https://cloud.google.com/dialogflow/cx/docs/basics">https://cloud.google.com/dialogflow/cx/docs/basics</a></p>
+<h2 id="building-a-dialogflow-cx-agent">Building a DialogFlow CX Agent</h2>
+<p>Today we&rsquo;re going to build a virtual agent for a candy shop. The candy shop is hoping to use DialogFlow CX to accomplish two items: 1. Allow customers to place orders &amp; 2. Give out store hours. Let&rsquo;s get to work!</p>
+<ul>
+<li>Navigate to the Google CCAI Console &amp; ensure that you are in the project that you created in the previous section.
+<ul>
+<li><a href="https://dialogflow.cloud.google.com/cx/projects">https://dialogflow.cloud.google.com/cx/projects</a></li>
+</ul>
 </li>
-<li>
-<p>Step two</p>
-</li>
-<li>
-<p>Step three</p>
-</li>
-</ol>
+<li>If you receive this prompt when you navigate to the link, just enable the API.
+<img src="../images/EnableAPI.jpg" alt="EnableAPI"></li>
+<li>Create a new agent and give it a descriptive name like &ldquo;Candy Shop Bot&rdquo;</li>
+<li>The first task we will do is edit the Default Welcome Intent. Click on the start button in the middle of the page and then on Default Welcome Intent. Under fulfillment, let&rsquo;s delete the default phrases and add our own; &ldquo;Thanks for chatting with the candy shop. How can we help you?&rdquo; Be sure to click save.
+<img src="../images/candyShopHello.jpg" alt="Candy Shop Hello"></li>
+<li>Before we move to the next step, let&rsquo;s go over the Test Agent tool. In the top right, click test agent. If you say hello, you should get back the response we just created!
+<img src="../images/testAgent.jpg" alt="Test Agent"></li>
+<li>Next we are going to create our intents &amp; pages&hellip;</li>
+</ul>
 
 
 <footer class="footline">
@@ -831,19 +851,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1654027203"></script>
-    <script src="../js/perfect-scrollbar.min.js?1654027203"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1654027203"></script>
-    <script src="../js/jquery.sticky.js?1654027203"></script>
-    <script src="../js/featherlight.min.js?1654027203"></script>
-    <script src="../js/highlight.pack.js?1654027203"></script>
+    <script src="../js/clipboard.min.js?1654282606"></script>
+    <script src="../js/perfect-scrollbar.min.js?1654282606"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1654282606"></script>
+    <script src="../js/jquery.sticky.js?1654282606"></script>
+    <script src="../js/featherlight.min.js?1654282606"></script>
+    <script src="../js/highlight.pack.js?1654282606"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1654027203"></script>
-    <script src="../js/learn.js?1654027203"></script>
-    <script src="../js/hugo-learn.js?1654027203"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1654282606"></script>
+    <script src="../js/learn.js?1654282606"></script>
+    <script src="../js/hugo-learn.js?1654282606"></script>
     
         
-            <script src="../mermaid/mermaid.js?1654027203"></script>
+            <script src="../mermaid/mermaid.js?1654282606"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
