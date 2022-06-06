@@ -11,22 +11,22 @@
     <title>Building a DialogFlow CX Agent :: Documentation for Hugo Learn Theme</title>
 
     
-    <link href="../css/nucleus.css?1654531283" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1654531283" rel="stylesheet">
-    <link href="../css/hybrid.css?1654531283" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1654531283" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1654531283" rel="stylesheet">
-    <link href="../css/auto-complete.css?1654531283" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1654531283" rel="stylesheet">
-    <link href="../css/theme.css?1654531283" rel="stylesheet">
-    <link href="../css/tabs.css?1654531283" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1654531283" rel="stylesheet">
+    <link href="../css/nucleus.css?1654548968" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1654548968" rel="stylesheet">
+    <link href="../css/hybrid.css?1654548968" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1654548968" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1654548968" rel="stylesheet">
+    <link href="../css/auto-complete.css?1654548968" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1654548968" rel="stylesheet">
+    <link href="../css/theme.css?1654548968" rel="stylesheet">
+    <link href="../css/tabs.css?1654548968" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1654548968" rel="stylesheet">
     
-    <link href="../css/theme-mine.css?1654531283" rel="stylesheet">
+    <link href="../css/theme-mine.css?1654548968" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1654531283"></script>
+    <script src="../js/jquery-3.3.1.min.js?1654548968"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1654531283"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1654531283"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1654548968"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1654548968"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1654531283"></script>
+<script type="text/javascript" src="../js/search.js?1654548968"></script>
 
     
   </div>
@@ -580,7 +580,8 @@
 <img src="../images/candyShopHello.jpg" alt="Candy Shop Hello"></li>
 <li>Before we move to the next step, let&rsquo;s go over the Test Agent tool. In the top right, click test agent. If you say hello, you should get back the response we just created!
 <img src="../images/testAgent.jpg" alt="Test Agent"></li>
-<li>Now we are going to create a couple of intents and pages. You can create intents two ways; either from the manage tab or inline. We&rsquo;ll show you both ways. Pages can either be created from the build tab or inline. We will first create an intent using the manage tab and a page using the build tab.
+</ul>
+<p>Now we are going to create a couple of intents and pages. You can create intents two ways; either from the manage tab or inline. We&rsquo;ll show you both ways. Pages can either be created from the build tab or inline. We will first create an intent using the manage tab and a page using the build tab.</p>
 <ul>
 <li>Select the manage tab &gt; intents &gt; create</li>
 <li>Name this intent store.hours</li>
@@ -601,8 +602,6 @@
 <li>Navigate back to the Default Start Flow and then press the Start block
 <ul>
 <li>Create a new route and choose store.hours from the intent drop down and under the transition section choose the Hours page.</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>Now we are going to create an intent and a page using the inline functionality
@@ -634,8 +633,46 @@
 </li>
 <li>Quick check in - at this point, your graphical editor should look like this.
 <img src="../images/graphicalEditorCheckIn.jpg" alt="Graphical Editor Check In"></li>
-<li>Next we need to add parameters to our New Order page&hellip;</li>
 </ul>
+<p>Next we need to add parameters to our New Order page. As mentioned in the terminology sections, parameters must be of an entity type. There are both system entities which come preloaded and then you can create custom entities for custom types of data. In our scenario, we will gather the type of candy they want to order (custom entity) and the quantity of that candy that they want to order.</p>
+<ul>
+<li>First let&rsquo;s create the new custom entity type for the type of candy. Our store sells 5 different types of candies: jawbreakers, gumdrops, suckers, gummy bears, and jelly beans.
+<ul>
+<li>Navigate to the manage tab &gt; entity types &gt; and then create a new custom entity type named candy_Types. Under the entities section on this page, add our 5 candy types listed above and any corresponding synonyms you can think of. Be sure to press save.
+<img src="../images/candyTypeEntity.jpg" alt="Candy Type Entity"></li>
+</ul>
+</li>
+<li>Now that we have our custom entity type, we can add our parameters to our New Order page.
+<ul>
+<li>Navigate back to Build and then click on the New Order page in the graphical builder.</li>
+<li>Click the + to create a new parameter.</li>
+<li>Name the parameter &ldquo;Candy&rdquo; and in the entity type drop down find the custom entity type we just created. Lastly, in the Initial prompt fulfillment section, type &ldquo;What type of candy do you want to order?&rdquo; After that, press save.
+<img src="../images/candyParameter.jpg" alt="Candy Parameter"></li>
+<li>Click the + again to create another parameter. This time, we&rsquo;ll gather the amount they want to order.
+<ul>
+<li>For display name, type Quantity and for entity type choose @sys.number.</li>
+<li>For the Initial prompt fulfillment, type &ldquo;How many $session.params.Candy would you like?&rdquo;</li>
+<li>The $session.params.Candy variable will plug in the previously entered Candy type that they gave us, for example &ldquo;How many suckers would you like?&rdquo;
+Lastly, we will create an order confirmation page and transition to that page using a condition that checks if all the New Order parameters are filled in.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>First create a new page and name it Order Confirmation.</li>
+<li>Click on the page and add entry fulfillment that says &ldquo;We&rsquo;ll have your order for $session.params.Quantity $session.params.Candy ready in two business days!&rdquo;</li>
+<li>Navigate back to the Default Start Flow graphical interface and click on the New Order page.
+<ul>
+<li>Click the + to add a new route.</li>
+<li>Add a condition to check if $page.params.status = FINAL and then transition to the Order Confirmation page if this evaluates to true. Be sure to save the route.
+<img src="../images/pageParamsFinal.jpg" alt="Page Params Final">
+There you go! Your graphical interface should now look like this.
+<img src="../images/graphicalInterfaceFinal.jpg" alt="Graphical Interface Final">
+We also can use the test agent tool. Go through this conversation with the bot.
+<img src="../images/finalTestAgent.jpg" alt="Final Test Agent"></li>
+</ul>
+</li>
+</ul>
+<p>If your conversation worked, congrats! You&rsquo;ve just created a candy shop bot.</p>
 
 
 <footer class="footline">
@@ -905,19 +942,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1654531283"></script>
-    <script src="../js/perfect-scrollbar.min.js?1654531283"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1654531283"></script>
-    <script src="../js/jquery.sticky.js?1654531283"></script>
-    <script src="../js/featherlight.min.js?1654531283"></script>
-    <script src="../js/highlight.pack.js?1654531283"></script>
+    <script src="../js/clipboard.min.js?1654548968"></script>
+    <script src="../js/perfect-scrollbar.min.js?1654548968"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1654548968"></script>
+    <script src="../js/jquery.sticky.js?1654548968"></script>
+    <script src="../js/featherlight.min.js?1654548968"></script>
+    <script src="../js/highlight.pack.js?1654548968"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1654531283"></script>
-    <script src="../js/learn.js?1654531283"></script>
-    <script src="../js/hugo-learn.js?1654531283"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1654548968"></script>
+    <script src="../js/learn.js?1654548968"></script>
+    <script src="../js/hugo-learn.js?1654548968"></script>
     
         
-            <script src="../mermaid/mermaid.js?1654531283"></script>
+            <script src="../mermaid/mermaid.js?1654548968"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
