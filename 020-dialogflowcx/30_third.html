@@ -11,22 +11,22 @@
     <title>Building a DialogFlow CX Agent :: Documentation for Hugo Learn Theme</title>
 
     
-    <link href="../css/nucleus.css?1654282606" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1654282606" rel="stylesheet">
-    <link href="../css/hybrid.css?1654282606" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1654282606" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1654282606" rel="stylesheet">
-    <link href="../css/auto-complete.css?1654282606" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1654282606" rel="stylesheet">
-    <link href="../css/theme.css?1654282606" rel="stylesheet">
-    <link href="../css/tabs.css?1654282606" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1654282606" rel="stylesheet">
+    <link href="../css/nucleus.css?1654531283" rel="stylesheet">
+    <link href="../css/fontawesome-all.min.css?1654531283" rel="stylesheet">
+    <link href="../css/hybrid.css?1654531283" rel="stylesheet">
+    <link href="../css/featherlight.min.css?1654531283" rel="stylesheet">
+    <link href="../css/perfect-scrollbar.min.css?1654531283" rel="stylesheet">
+    <link href="../css/auto-complete.css?1654531283" rel="stylesheet">
+    <link href="../css/atom-one-dark-reasonable.css?1654531283" rel="stylesheet">
+    <link href="../css/theme.css?1654531283" rel="stylesheet">
+    <link href="../css/tabs.css?1654531283" rel="stylesheet">
+    <link href="../css/hugo-theme.css?1654531283" rel="stylesheet">
     
-    <link href="../css/theme-mine.css?1654282606" rel="stylesheet">
+    <link href="../css/theme-mine.css?1654531283" rel="stylesheet">
     
     
 
-    <script src="../js/jquery-3.3.1.min.js?1654282606"></script>
+    <script src="../js/jquery-3.3.1.min.js?1654531283"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1654282606"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1654282606"></script>
+<script type="text/javascript" src="../js/lunr.min.js?1654531283"></script>
+<script type="text/javascript" src="../js/auto-complete.js?1654531283"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1654282606"></script>
+<script type="text/javascript" src="../js/search.js?1654531283"></script>
 
     
   </div>
@@ -566,7 +566,7 @@
 </ul>
 <p>Reference page - <a href="https://cloud.google.com/dialogflow/cx/docs/basics">https://cloud.google.com/dialogflow/cx/docs/basics</a></p>
 <h2 id="building-a-dialogflow-cx-agent">Building a DialogFlow CX Agent</h2>
-<p>Today we&rsquo;re going to build a virtual agent for a candy shop. The candy shop is hoping to use DialogFlow CX to accomplish two items: 1. Allow customers to place orders &amp; 2. Give out store hours. Let&rsquo;s get to work!</p>
+<p>Today we&rsquo;re going to build a virtual agent for a candy shop. The candy shop is hoping to use DialogFlow CX to accomplish two items: 1. Allow customers to place orders &amp; 2. Give out store hours. Let&rsquo;s get to work! Try to follow along with either the steps below or watch the video at the bottom of this page.</p>
 <ul>
 <li>Navigate to the Google CCAI Console &amp; ensure that you are in the project that you created in the previous section.
 <ul>
@@ -580,7 +580,61 @@
 <img src="../images/candyShopHello.jpg" alt="Candy Shop Hello"></li>
 <li>Before we move to the next step, let&rsquo;s go over the Test Agent tool. In the top right, click test agent. If you say hello, you should get back the response we just created!
 <img src="../images/testAgent.jpg" alt="Test Agent"></li>
-<li>Next we are going to create our intents &amp; pages&hellip;</li>
+<li>Now we are going to create a couple of intents and pages. You can create intents two ways; either from the manage tab or inline. We&rsquo;ll show you both ways. Pages can either be created from the build tab or inline. We will first create an intent using the manage tab and a page using the build tab.
+<ul>
+<li>Select the manage tab &gt; intents &gt; create</li>
+<li>Name this intent store.hours</li>
+<li>Enter at least 5 training phrases. Here&rsquo;s two examples.
+<ul>
+<li>When is your store open?</li>
+<li>What are your hours?</li>
+<li>Be sure to press save after adding your training phrases</li>
+</ul>
+</li>
+<li>Navigate back to the build tab and then click the + sign to create a new page named &ldquo;Hours&rdquo;</li>
+<li>Hover over the newly created Hours page and click the 3 dots and then Edit
+<ul>
+<li>Edit the fulfillment field and then input some text describing your candy shops store hours. For example, &ldquo;Our shop is open Monday through Saturday from 11am to 9pm.&rdquo;</li>
+<li>Be sure to press save on both the fulfillment and the page.</li>
+</ul>
+</li>
+<li>Navigate back to the Default Start Flow and then press the Start block
+<ul>
+<li>Create a new route and choose store.hours from the intent drop down and under the transition section choose the Hours page.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now we are going to create an intent and a page using the inline functionality
+<ul>
+<li>Click the start block under the Default Start Flow and then the + to add a new route</li>
+<li>In the intent drop down list click + new Intent, which will allow you to create a new intent directly from here
+<img src="../images/inlineNewIntent.jpg" alt="Inline New Intent">
+<ul>
+<li>Name your new intent &ldquo;Order Candy&rdquo; and add some training phrases of what a customer might say if they want to order candy. Under training phrases, add the following sentences
+<ul>
+<li>order some gumdrops</li>
+<li>place a new order</li>
+<li>i want candy</li>
+<li>i want 500 suckers</li>
+<li>i&rsquo;d like to buy 10 jawbreakers</li>
+</ul>
+</li>
+<li>You should notice that a parameter is automatically created when putting in your training phrases. Google is recognizing based on your inputted training phrases that you are going to need to gather the quantity of candies as a parameter for this intent. We&rsquo;ll get more into adding parameters here in just a little bit.
+<img src="../images/parameterAutopopulate.jpg" alt="Parameter Autopopulate"></li>
+</ul>
+</li>
+<li>While still editing the route, navigate down to the transition section and now let&rsquo;s create a new page using inline functionality.
+<img src="../images/inlineNewPage.jpg" alt="Inline New Page">
+<ul>
+<li>name this page &ldquo;New Order&rdquo; and then save your route</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Quick check in - at this point, your graphical editor should look like this.
+<img src="../images/graphicalEditorCheckIn.jpg" alt="Graphical Editor Check In"></li>
+<li>Next we need to add parameters to our New Order page&hellip;</li>
 </ul>
 
 
@@ -851,19 +905,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1654282606"></script>
-    <script src="../js/perfect-scrollbar.min.js?1654282606"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1654282606"></script>
-    <script src="../js/jquery.sticky.js?1654282606"></script>
-    <script src="../js/featherlight.min.js?1654282606"></script>
-    <script src="../js/highlight.pack.js?1654282606"></script>
+    <script src="../js/clipboard.min.js?1654531283"></script>
+    <script src="../js/perfect-scrollbar.min.js?1654531283"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js?1654531283"></script>
+    <script src="../js/jquery.sticky.js?1654531283"></script>
+    <script src="../js/featherlight.min.js?1654531283"></script>
+    <script src="../js/highlight.pack.js?1654531283"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1654282606"></script>
-    <script src="../js/learn.js?1654282606"></script>
-    <script src="../js/hugo-learn.js?1654282606"></script>
+    <script src="../js/modernizr.custom-3.6.0.js?1654531283"></script>
+    <script src="../js/learn.js?1654531283"></script>
+    <script src="../js/hugo-learn.js?1654531283"></script>
     
         
-            <script src="../mermaid/mermaid.js?1654282606"></script>
+            <script src="../mermaid/mermaid.js?1654531283"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
